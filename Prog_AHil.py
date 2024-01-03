@@ -1,4 +1,4 @@
-imie = input("Podaj imie ")
+imie = input("Podaj swoje imie ")
 
 def dajGlos(name):
     print("Czesc "+name)
