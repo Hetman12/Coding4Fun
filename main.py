@@ -10,6 +10,7 @@ for file in files_in_dir:
             module_path = os.path.join(current_dir, file)
             spec = importlib.util.spec_from_file_location(module_name, module_path)
             module = importlib.util.module_from_spec(spec)
+            print(f"--- Loading module {module_name}.py ---")
             spec.loader.exec_module(module)
 
             # Check if the DajGlos function exists in the module and run it
@@ -17,5 +18,7 @@ for file in files_in_dir:
                 print("-----------------------------------------------------")
                 print(f"Running DajGlos from {module_name}.py")
                 module.DajGlos()
+                print(" ")
             else:
                  print(f"Did not found DajGlos definition in {module_name}.py")
+                 print(" ")
